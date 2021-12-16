@@ -3,6 +3,7 @@ from .models import Patient
 
 # Register your models here.
 
-@admin.register(Patient)
-class PatientAdmin(admin.ModelAdmin):
-    fields = '__all__'
+admin.site.register(Patient)
+
+
+
