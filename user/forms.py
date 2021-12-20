@@ -9,7 +9,7 @@ class SignupForm(SignupForm):
     city = forms.CharField(max_length=10)
     address = forms.CharField(max_length=40)
     mobile = forms.IntegerField()
-    dob = models.DateField(max_length=8)
+    dob = forms.DateField()
 
     def save(self, request):
         user = super(SignupForm, self).save(request)
@@ -19,6 +19,7 @@ class SignupForm(SignupForm):
         user.mobile = self.cleaned_data['mobile']
         user.gender = self.cleaned_data['gender']
         user.city = self.cleaned_data['city']
+        user.dob = self.cleaned_data['dob']
         user.save()
         return user
 

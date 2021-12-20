@@ -91,7 +91,7 @@ DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql_psycopg2',
        'NAME': 'hospital_management',
-       'USER': 'karishma',
+       'USER': 'hospital',
        'PASSWORD': 'admin',
        'HOST': 'localhost',
        'PORT': '5432',

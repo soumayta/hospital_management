@@ -17,11 +17,11 @@ class User(AbstractUser):
     city = models.CharField(max_length=10)
     address = models.CharField(max_length=40)
     mobile = models.IntegerField()
-    dob = models.DateField(max_length=10)
+    dob = models.DateField()
     
 
-    def __str__(self):
-        return str(self.name)
+    
+    
 
 
     
