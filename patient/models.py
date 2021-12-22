@@ -1,5 +1,6 @@
 from django.db import models
 from user.models import User
+from doctor.models import Doctor                                        
 
 # Create your models here.
 class Patient(models.Model):
