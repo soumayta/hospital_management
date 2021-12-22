@@ -1,18 +1,18 @@
 from django.db import models
 from user.models import User
-
 # Create your models here.
 
-specilisation =(
-    ('MBBS' , 'MBBS'),
-    ('MS' , 'MS'),
-    ('MD' , 'MD'),
-    ('BAMS' , 'BAMS'),
-    ('BPT' , 'BPT'),
-    ('BUMS' , 'BUMS'),
+SPECILISATION =(
+    ('ANESTHESIOLOGIST' , 'ANESTHESIOLOGIST'),
+    ('CARDIOLOGISTS' , 'CARDIOLOGISTS'),
+    ('DERMATOTLOGIST' ,'DERMATOTLOGIST'),
+    ('GASTROENTROLOGIST' , 'GASTROENTROLOGIST'),
+    ('HEMATOLOGIST' , 'HEMATOLOGIST'),
+    ('INTERNISTS' , 'INTERNISTS'),
 )
 
 
-class Doctor(User):
-    specialisation = models.CharField(max_length =100,choices=specilisation,null=True)
+class Doctor(models.Model):
+    user=models.OneToOneField(User,on_delete=models.CASCADE)
+    specialisation = models.CharField(max_length =100,choices=SPECILISATION,null=True)
     experience = models.PositiveIntegerField()
