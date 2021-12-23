@@ -15,4 +15,4 @@ SPECILISATION =(
 class Doctor(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
     specialisation = models.CharField(max_length =100,choices=SPECILISATION,null=True)
-    experience = models.PositiveIntegerField()
+    experience = models.PositiveIntegerField(null=True,blank=True)
