@@ -47,21 +47,33 @@
                     <li class="nav-item">
                       <a class="nav-link disabled" href="#">Disabled</a>
                     </li>
+                    
+                    
+                    
+      
+                  
+
                   </ul>
                   <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                   </form>
+                  <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'profile' %}">Profile <span class="sr-only">(current)</span></a>
+                  </li>  
+                </ul>                              
                 </div>
               </nav>
       </nav>
-      {% endblock %}
+      {% endblock navbar %}
 
       {% block content %}
     
-        <img src="{% static 'image/cover.jpg' %}" alt="My image" height="820">
+      {% include 'doctor/home.html' %}
+      {% include 'doctor/profile.html' %}
 
-      {% endblock %}
+      {% endblock content %}
 
       {% block footer %}
      
@@ -213,7 +225,7 @@
 
 </footer>
 <!-- Footer -->
-{% endblock %}
+{% endblock footer %}
 
 
         

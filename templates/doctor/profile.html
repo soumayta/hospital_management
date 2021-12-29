@@ -1,4 +1,10 @@
-{% extends "doctor/base2.html" %} 
-{% block contain %}
-<p>hello user</p>
-{% endblock contain %}
+{% extends "doctor/base.html" %} 
+{% block content %}
+<p>form</p>
+    <form action="{% url 'profile' %}" method="POST">
+    {% csrf_token %}
+    {{ form }}</br>
+    {{edit_form}}
+    <button type="submit">update</button>
+    </form>
+{% endblock content %}

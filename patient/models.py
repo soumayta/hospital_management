@@ -6,3 +6,5 @@ from doctor.models import Doctor
 class Patient(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
     sickness = models.CharField(max_length = 100)
+    def __str__(self):
+        return str(self.user.username)  

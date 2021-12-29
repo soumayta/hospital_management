@@ -25,9 +25,8 @@ class SignupForm(SignupForm):
         user.dob = self.cleaned_data['dob']
         if user.profile=='Doctor':
             doctor=Doctor.objects.create(user=user)
-            doctor.save()
         else:
             patient=Patient.objects.create(user=user)
-            patient.save()
+        user.save()
         return user
 
