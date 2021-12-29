@@ -3,8 +3,14 @@
 <p>form</p>
     <form action="{% url 'profile' %}" method="POST">
     {% csrf_token %}
+    {% if user.profile == Doctor %}
     {{ form }}</br>
     {{edit_form}}
+    {% else %}
+    {{ form }}</br>
+    {{patient_form}}
     <button type="submit">update</button>
+
+    {% endif %}
     </form>
 {% endblock content %}
